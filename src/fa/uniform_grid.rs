@@ -2,7 +2,7 @@ use super::{Function, Parameterised, Linear, VFunction, QFunction};
 
 use utils::dot;
 use ndarray::{arr1, Array1, Array2};
-use geometry::{Span, Space, RegularSpace, Projection};
+use geometry::{Space, RegularSpace, Projection};
 use geometry::dimensions::{Partitioned, Continuous};
 
 
@@ -16,11 +16,7 @@ impl UniformGrid {
     pub fn new(input_space: RegularSpace<Partitioned>,
                n_outputs: usize) -> Self
     {
-        let n_features = match input_space.span() {
-            Span::Finite(s) => s,
-            _ => panic!("`UniformGrid` function approximator only supports \
-                         partitioned input spaces.")
-        };
+        let n_features = input_space.span().into();
 
         UniformGrid {
             weights: Array2::<f64>::zeros((n_features, n_outputs)),
@@ -69,6 +65,10 @@ impl Parameterised<Vec<f64>, f64> for UniformGrid {
             *self.weights.uget_mut((index, 0)) += error
         }
     }
+
+    fn equivalent(&self, other: &Self) -> bool {
+        self.weights.shape() == other.weights.shape()
+    }
 }
 
 impl Parameterised<Vec<f64>, Vec<f64>> for UniformGrid {
@@ -78,6 +78,10 @@ impl Parameterised<Vec<f64>, Vec<f64>> for UniformGrid {
 
         // Get the row slice and perform update via memcpy:
         self.weights.row_mut(ri).scaled_add(1.0, &arr1(&errors));
+    }
+
+    fn equivalent(&self, other: &Self) -> bool {
+        <Self as Parameterised<Vec<f64>, f64>>::equivalent(self, other)
     }
 }
 
@@ -129,7 +133,7 @@ impl QFunction<RegularSpace<Continuous>> for UniformGrid
 mod tests {
     use super::UniformGrid;
 
-    use fa::{Function, Parameterised};
+    use fa::{Function, Parameterised, VFunction, QFunction};
     use geometry::RegularSpace;
     use geometry::dimensions::Partitioned;
 
@@ -149,6 +153,24 @@ mod tests {
 
         let out: f64 = t.evaluate(&vec![1.5]);
         assert_eq!(out, 12.75);
+    }
+
+    #[test]
+    fn test_multiple_outputs() {
+        let mut ds = RegularSpace::new();
+        ds = ds.push(Partitioned::new(0.0, 10.0, 10));
+
+        let mut t = UniformGrid::new(ds, 2);
+
+        t.update(&vec![1.5], vec![-20.1, 25.5]);
+
+        let out: Vec<f64> = t.evaluate(&vec![1.5]);
+        assert_eq!(out, vec![-20.1, 25.5]);
+
+        t.update_action(&vec![1.5], 0, 20.1);
+
+        let out: f64 = t.evaluate_action(&vec![1.5], 0);
+        assert_eq!(out, 0.0);
     }
 
     #[test]
