@@ -6,6 +6,10 @@ pub trait Policy {
     fn handle_terminal(&mut self) {}
 }
 
+pub trait DifferentiablePolicy: Policy {
+    fn grad(&self) -> Vec<f64>;
+}
+
 
 mod random;
 pub use self::random::Random;
