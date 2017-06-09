@@ -76,86 +76,80 @@ impl<S: Space, Q, C, P> ControlAgent<S, ActionSpace> for ActorCritic<S, Q, C, P>
 }
 
 
-// /// Off-policy actor-critic algorithm.
-// ///
-// /// http://icml.cc/2012/papers/268.pdf
-// pub struct OffPAC<S: Space, P, Q, C>
-    // where Q: QFunction<S>,
-          // C: PredictionAgent<S>,
-          // P: DifferentiablePolicy
-// {
-    // actor: Q,
-    // critic: C,
+/// Off-policy actor-critic algorithm.
+///
+/// http://icml.cc/2012/papers/268.pdf
+pub struct OffPAC<S: Space, P, Q, C>
+    where Q: QFunction<S>,
+          C: PredictionAgent<S>,
+          P: DifferentiablePolicy
+{
+    actor: Q,
+    critic: C,
 
-    // policy: P,
+    policy: P,
 
-    // alpha: f64,
-    // beta: f64,
-    // gamma: f64,
+    alpha: Parameter,
+    beta: Parameter,
+    gamma: Parameter,
 
-    // phantom: PhantomData<S>,
-// }
+    phantom: PhantomData<S>,
+}
 
-// impl<S: Space, P, Q, C> OffPAC<S, P, Q, C>
-    // where Q: QFunction<S>,
-          // C: PredictionAgent<S>,
-          // P: DifferentiablePolicy
-// {
-    // pub fn new(actor: Q, critic: C, policy: P,
-               // alpha: f64, beta: f64, gamma: f64) -> Self
-    // {
-        // OffPAC {
-            // actor: actor,
-            // critic: critic,
+impl<S: Space, P, Q, C> OffPAC<S, P, Q, C>
+    where Q: QFunction<S>,
+          C: PredictionAgent<S>,
+          P: DifferentiablePolicy
+{
+    pub fn new<T1, T2, T3>(actor: Q, critic: C, policy: P,
+                           alpha: T1, beta: T2, gamma: T3) -> Self
+    {
+        OffPAC {
+            actor: actor,
+            critic: critic,
 
-            // policy: policy,
+            policy: policy,
 
-            // alpha: alpha,
-            // beta: beta,
-            // gamma: gamma,
+            alpha: alpha.into(),
+            beta: beta.into(),
+            gamma: gamma.into(),
 
-            // phantom: PhantomData,
-        // }
-    // }
-// }
+            phantom: PhantomData,
+        }
+    }
+}
 
-// impl<S: Space, P, Q, C> Agent<S> for OffPAC<S, P, Q, C>
-    // where Q: QFunction<S>,
-          // C: PredictionAgent<S>,
-          // P: DifferentiablePolicy
-// {
-    // fn handle_terminal(&mut self) {
-        // self.alpha = self.alpha.step();
-        // self.beta = self.beta.step();
-        // self.gamma = self.gamma.step();
-    // }
-// }
+impl<S: Space, P, Q, C> ControlAgent<S, ActionSpace> for OffPAC<S, P, Q, C>
+    where Q: QFunction<S>,
+          C: PredictionAgent<S>,
+          P: DifferentiablePolicy
+{
+    fn pi(&mut self, s: &S::Repr) -> usize {
+        self.policy.sample(self.actor.evaluate(s).as_slice())
+    }
 
-// impl<S: Space, P, Q, C> ControlAgent<S, ActionSpace> for OffPAC<S, P, Q, C>
-    // where Q: QFunction<S>,
-          // C: PredictionAgent<S>,
-          // P: DifferentiablePolicy
-// {
-    // fn pi(&mut self, s: &S::Repr) -> usize {
-        // self.policy.sample(self.actor.evaluate(s).as_slice())
-    // }
+    fn evaluate_policy(&self, p: &mut Policy, s: &S::Repr) -> usize {
+        p.sample(self.actor.evaluate(s).as_slice())
+    }
 
-    // fn pi_target(&mut self, s: &S::Repr) -> usize {
-        // Greedy.sample(self.actor.evaluate(s).as_slice())
-    // }
+    fn handle_transition(&mut self, t: &Transition<S, ActionSpace>) {
+        let (s, ns) = (t.from.state(), t.to.state());
 
-    // fn handle_transition(&mut self, t: &Transition<S, ActionSpace>) {
-        // let (s, ns) = (t.from.state(), t.to.state());
+        let qs = self.actor.evaluate(s);
 
-        // let qs = self.actor.evaluate(s);
+        let delta = t.reward +
+            self.gamma*self.critic.evaluate(ns) - self.critic.evaluate(s);
 
-        // let delta = t.reward +
-            // self.gamma*self.critic.evaluate(ns) - self.critic.evaluate(s);
+        let rho = Greedy.probabilities(&qs)[t.action] /
+            self.policy.probabilities(&qs)[t.action];
 
-        // let rho = Greedy.probabilities(&qs)[t.action] /
-            // self.policy.probabilities(&qs)[t.action];
+        self.actor.update_action(s, t.action, self.beta*delta);
+        self.critic.update(s, self.alpha*delta);
+    }
 
-        // self.actor.update_action(s, t.action, self.beta*delta);
-        // self.critic.update(s, self.alpha*delta);
-    // }
-// }
+    fn handle_terminal(&mut self, _: &S::Repr) {
+        self.alpha = self.alpha.step();
+        self.beta = self.beta.step();
+        self.gamma = self.gamma.step();
+    }
+}
