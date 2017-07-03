@@ -15,14 +15,16 @@ pub struct Gym {
 }
 
 impl Gym {
-    pub fn new() -> Self {
+    pub fn new() -> PyResult<Self> {
         let gil = Python::acquire_gil();
-        let gym = gil.python().import("gym").unwrap();
+        let gym = gil.python().import("gym")?;
 
-        Self {
+        gil.python().run("import logging; logging.getLogger('gym.envs.registration').setLevel(logging.CRITICAL)", None, None)?;
+
+        Ok(Self {
             gil: gil,
             gym: gym,
-        }
+        })
     }
 
     fn py(&self) -> Python {
@@ -48,7 +50,7 @@ pub struct Env {
 
 impl Env {
     pub fn new(env_id: &str) -> PyResult<Self> {
-        let mut gym = Gym::new();
+        let mut gym = Gym::new()?;
         let env = gym.make(env_id)?;
 
         let obs = env.call_method(gym.py(), "reset", NoArgs, None)?;
