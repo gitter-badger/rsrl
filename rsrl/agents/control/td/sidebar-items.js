@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ExpectedSARSA","Expected SARSA."],["QLearning","Watkins' classical off policy temporal difference control algorithm."],["QSigma","General multi-step temporal-difference learning algorithm."],["SARSA","Classical on policy temporal difference control algorithm."]]});

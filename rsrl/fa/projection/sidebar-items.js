@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BasisFunction","Represents the location and kernel associated with a basis function."],["BasisNetwork",""],["RBFNetwork",""],["SuttonTiles",""],["UniformGrid",""]],"trait":[["Projection",""]]});

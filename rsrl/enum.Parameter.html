@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Parameter` enum in crate `rsrl`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Parameter">
+
+    <title>rsrl::Parameter - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum Parameter</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>rsrl</a></p><script>window.sidebarCurrent = {name: 'Parameter', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>rsrl</a>::<wbr><a class="enum" href=''>Parameter</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/rsrl/parameter.rs.html#7-21' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Parameter {
+    Fixed(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>),
+    Exponential {
+        init: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+        floor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+        count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        decay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    },
+    Polynomial {
+        init: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+        floor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+        count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        exponent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    },
+}</pre><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.Fixed' class='variant'><span id='Fixed.v' class='invisible'><code>Fixed(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>)</code></span></span><span id='variant.Exponential' class='variant'><span id='Exponential.v' class='invisible'><code>Exponential</code></span></span><span class='docblock autohide sub-variant' id='variant.Exponential.fields'><h3 class='fields'>Fields of <code>Exponential</code></h3>
+
+                           <table><tr><td id='variant.Exponential.field.init'><span id='Exponential.v.init.v' class='invisible'><code>init:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></td><td></td></tr><tr><td id='variant.Exponential.field.floor'><span id='Exponential.v.floor.v' class='invisible'><code>floor:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></td><td></td></tr><tr><td id='variant.Exponential.field.count'><span id='Exponential.v.count.v' class='invisible'><code>count:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></td><td></td></tr><tr><td id='variant.Exponential.field.decay'><span id='Exponential.v.decay.v' class='invisible'><code>decay:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></td><td></td></tr></table></span><span id='variant.Polynomial' class='variant'><span id='Polynomial.v' class='invisible'><code>Polynomial</code></span></span><span class='docblock autohide sub-variant' id='variant.Polynomial.fields'><h3 class='fields'>Fields of <code>Polynomial</code></h3>
+
+                           <table><tr><td id='variant.Polynomial.field.init'><span id='Polynomial.v.init.v' class='invisible'><code>init:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></td><td></td></tr><tr><td id='variant.Polynomial.field.floor'><span id='Polynomial.v.floor.v' class='invisible'><code>floor:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></td><td></td></tr><tr><td id='variant.Polynomial.field.count'><span id='Polynomial.v.count.v' class='invisible'><code>count:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></td><td></td></tr><tr><td id='variant.Polynomial.field.exponent'><span id='Polynomial.v.exponent.v' class='invisible'><code>exponent:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></td><td></td></tr></table></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#23-107' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fixed' class="method"><span id='fixed.v' class='invisible'><code>fn <a href='#method.fixed' class='fnname'>fixed</a>(value: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span></h4>
+<h4 id='method.exponential' class="method"><span id='exponential.v' class='invisible'><code>fn <a href='#method.exponential' class='fnname'>exponential</a>(init: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, floor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, decay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span></h4>
+<h4 id='method.polynomial' class="method"><span id='polynomial.v' class='invisible'><code>fn <a href='#method.polynomial' class='fnname'>polynomial</a>(init: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, floor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, exponent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span></h4>
+<h4 id='method.value' class="method"><span id='value.v' class='invisible'><code>fn <a href='#method.value' class='fnname'>value</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<h4 id='method.to_fixed' class="method"><span id='to_fixed.v' class='invisible'><code>fn <a href='#method.to_fixed' class='fnname'>to_fixed</a>(self) -&gt; <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span></h4>
+<h4 id='method.step' class="method"><span id='step.v' class='invisible'><code>fn <a href='#method.step' class='fnname'>step</a>(self) -&gt; <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span></h4>
+<h4 id='method.back' class="method"><span id='back.v' class='invisible'><code>fn <a href='#method.back' class='fnname'>back</a>(self) -&gt; <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Add.html" title="trait core::ops::Add">Add</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt; for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#118-124' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output' class="type"><span id='Output.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#associatedtype.Output' class="type">Output</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>+</code> operator</p>
+</div><h4 id='method.add' class="method"><span id='add.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#tymethod.add' class='fnname'>add</a>(self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The method for the <code>+</code> operator</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Add.html" title="trait core::ops::Add">Add</a>&lt;<a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a>&gt; for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#134-140' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-1' class="type"><span id='Output.t-1' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#associatedtype.Output' class="type">Output</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>+</code> operator</p>
+</div><h4 id='method.add-1' class="method"><span id='add.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#tymethod.add' class='fnname'>add</a>(self, other: <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The method for the <code>+</code> operator</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html" title="trait core::ops::Sub">Sub</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt; for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#118-124' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-2' class="type"><span id='Output.t-2' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#associatedtype.Output' class="type">Output</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>-</code> operator</p>
+</div><h4 id='method.sub' class="method"><span id='sub.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#tymethod.sub' class='fnname'>sub</a>(self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The method for the <code>-</code> operator</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html" title="trait core::ops::Sub">Sub</a>&lt;<a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a>&gt; for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#134-140' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-3' class="type"><span id='Output.t-3' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#associatedtype.Output' class="type">Output</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>-</code> operator</p>
+</div><h4 id='method.sub-1' class="method"><span id='sub.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#tymethod.sub' class='fnname'>sub</a>(self, other: <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The method for the <code>-</code> operator</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html" title="trait core::ops::Mul">Mul</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt; for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#118-124' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-4' class="type"><span id='Output.t-4' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#associatedtype.Output' class="type">Output</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>*</code> operator</p>
+</div><h4 id='method.mul' class="method"><span id='mul.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#tymethod.mul' class='fnname'>mul</a>(self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The method for the <code>*</code> operator</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html" title="trait core::ops::Mul">Mul</a>&lt;<a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a>&gt; for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#134-140' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-5' class="type"><span id='Output.t-5' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#associatedtype.Output' class="type">Output</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>*</code> operator</p>
+</div><h4 id='method.mul-1' class="method"><span id='mul.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#tymethod.mul' class='fnname'>mul</a>(self, other: <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The method for the <code>*</code> operator</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Div.html" title="trait core::ops::Div">Div</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt; for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#118-124' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-6' class="type"><span id='Output.t-6' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#associatedtype.Output' class="type">Output</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>/</code> operator</p>
+</div><h4 id='method.div' class="method"><span id='div.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#tymethod.div' class='fnname'>div</a>(self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The method for the <code>/</code> operator</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Div.html" title="trait core::ops::Div">Div</a>&lt;<a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a>&gt; for <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rsrl/parameter.rs.html#134-140' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-7' class="type"><span id='Output.t-7' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#associatedtype.Output' class="type">Output</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>/</code> operator</p>
+</div><h4 id='method.div-1' class="method"><span id='div.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#tymethod.div' class='fnname'>div</a>(self, other: <a class="enum" href="../rsrl/enum.Parameter.html" title="enum rsrl::Parameter">Parameter</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>The method for the <code>/</code> operator</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "rsrl";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Span",""]],"mod":[["dimensions",""],["kernels",""]],"struct":[["NullSpace",""],["PairSpace",""],["RegularSpace",""],["UnitarySpace",""]],"trait":[["Space",""]],"type":[["ActionSpace",""]]});

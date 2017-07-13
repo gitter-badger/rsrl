@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Linear` struct in crate `rsrl`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Linear">
+
+    <title>rsrl::fa::Linear - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Linear</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>rsrl</a>::<wbr><a href='index.html'>fa</a></p><script>window.sidebarCurrent = {name: 'Linear', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rsrl</a>::<wbr><a href='index.html'>fa</a>::<wbr><a class="struct" href=''>Linear</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#8-13' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Linear&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; { /* fields omitted */ }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; <a class="struct" href="../../rsrl/fa/struct.Linear.html" title="struct rsrl::fa::Linear">Linear</a>&lt;S, P&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#15-26' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>(projector: P, n_outputs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; Self</code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; <a class="trait" href="../../rsrl/fa/trait.Function.html" title="trait rsrl::fa::Function">Function</a>&lt;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt; for <a class="struct" href="../../rsrl/fa/struct.Linear.html" title="struct rsrl::fa::Linear">Linear</a>&lt;S, P&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#28-35' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.evaluate' class="method"><span id='evaluate.v' class='invisible'><code>fn <a href='../../rsrl/fa/trait.Function.html#tymethod.evaluate' class='fnname'>evaluate</a>(&amp;self, input: &amp;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<div class='docblock'><p>Evaluates the function and returns its output.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; <a class="trait" href="../../rsrl/fa/trait.Function.html" title="trait rsrl::fa::Function">Function</a>&lt;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;&gt; for <a class="struct" href="../../rsrl/fa/struct.Linear.html" title="struct rsrl::fa::Linear">Linear</a>&lt;S, P&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#37-45' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.evaluate-1' class="method"><span id='evaluate.v-1' class='invisible'><code>fn <a href='../../rsrl/fa/trait.Function.html#tymethod.evaluate' class='fnname'>evaluate</a>(&amp;self, input: &amp;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;</code></span></h4>
+<div class='docblock'><p>Evaluates the function and returns its output.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; <a class="trait" href="../../rsrl/fa/trait.Parameterised.html" title="trait rsrl::fa::Parameterised">Parameterised</a>&lt;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt; for <a class="struct" href="../../rsrl/fa/struct.Linear.html" title="struct rsrl::fa::Linear">Linear</a>&lt;S, P&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#48-55' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.update' class="method"><span id='update.v' class='invisible'><code>fn <a href='../../rsrl/fa/trait.Parameterised.html#tymethod.update' class='fnname'>update</a>(&amp;mut self, input: &amp;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>, error: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>)</code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; <a class="trait" href="../../rsrl/fa/trait.Parameterised.html" title="trait rsrl::fa::Parameterised">Parameterised</a>&lt;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;&gt; for <a class="struct" href="../../rsrl/fa/struct.Linear.html" title="struct rsrl::fa::Linear">Linear</a>&lt;S, P&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#57-64' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.update-1' class="method"><span id='update.v-1' class='invisible'><code>fn <a href='../../rsrl/fa/trait.Parameterised.html#tymethod.update' class='fnname'>update</a>(&amp;mut self, input: &amp;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>, errors: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;)</code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; <a class="trait" href="../../rsrl/fa/trait.VFunction.html" title="trait rsrl::fa::VFunction">VFunction</a>&lt;S&gt; for <a class="struct" href="../../rsrl/fa/struct.Linear.html" title="struct rsrl::fa::Linear">Linear</a>&lt;S, P&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#67-76' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.evaluate_phi' class="method"><span id='evaluate_phi.v' class='invisible'><code>fn <a href='../../rsrl/fa/trait.VFunction.html#method.evaluate_phi' class='fnname'>evaluate_phi</a>(&amp;self, phi: &amp;<a class="type" href="../../ndarray/aliases/type.Array1.html" title="type ndarray::aliases::Array1">Array1</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<h4 id='method.update_phi' class="method"><span id='update_phi.v' class='invisible'><code>fn <a href='../../rsrl/fa/trait.VFunction.html#method.update_phi' class='fnname'>update_phi</a>(&amp;mut self, phi: &amp;<a class="type" href="../../ndarray/aliases/type.Array1.html" title="type ndarray::aliases::Array1">Array1</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;, error: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>)</code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; <a class="trait" href="../../rsrl/fa/trait.QFunction.html" title="trait rsrl::fa::QFunction">QFunction</a>&lt;S&gt; for <a class="struct" href="../../rsrl/fa/struct.Linear.html" title="struct rsrl::fa::Linear">Linear</a>&lt;S, P&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#79-111' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.evaluate_action' class="method"><span id='evaluate_action.v' class='invisible'><code>fn <a href='../../rsrl/fa/trait.QFunction.html#tymethod.evaluate_action' class='fnname'>evaluate_action</a>(&amp;self, input: &amp;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>, action: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<h4 id='method.update_action' class="method"><span id='update_action.v' class='invisible'><code>fn <a href='../../rsrl/fa/trait.QFunction.html#tymethod.update_action' class='fnname'>update_action</a>(&amp;mut self, input: &amp;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>, action: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, error: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>)</code></span></h4>
+<h4 id='method.evaluate_phi-1' class="method"><span id='evaluate_phi.v-1' class='invisible'><code>fn <a href='../../rsrl/fa/trait.QFunction.html#method.evaluate_phi' class='fnname'>evaluate_phi</a>(&amp;self, phi: &amp;<a class="type" href="../../ndarray/aliases/type.Array1.html" title="type ndarray::aliases::Array1">Array1</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;</code></span></h4>
+<h4 id='method.evaluate_action_phi' class="method"><span id='evaluate_action_phi.v' class='invisible'><code>fn <a href='../../rsrl/fa/trait.QFunction.html#method.evaluate_action_phi' class='fnname'>evaluate_action_phi</a>(&amp;self, phi: &amp;<a class="type" href="../../ndarray/aliases/type.Array1.html" title="type ndarray::aliases::Array1">Array1</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;, action: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span></h4>
+<h4 id='method.update_phi-1' class="method"><span id='update_phi.v-1' class='invisible'><code>fn <a href='../../rsrl/fa/trait.QFunction.html#method.update_phi' class='fnname'>update_phi</a>(&amp;mut self, phi: &amp;<a class="type" href="../../ndarray/aliases/type.Array1.html" title="type ndarray::aliases::Array1">Array1</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;, errors: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;)</code></span></h4>
+<h4 id='method.update_action_phi' class="method"><span id='update_action_phi.v' class='invisible'><code>fn <a href='../../rsrl/fa/trait.QFunction.html#method.update_action_phi' class='fnname'>update_action_phi</a>(&amp;mut self, phi: &amp;<a class="type" href="../../ndarray/aliases/type.Array1.html" title="type ndarray::aliases::Array1">Array1</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;, action: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, error: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>)</code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Space</a>, P:&nbsp;<a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt;&gt; <a class="trait" href="../../rsrl/fa/projection/trait.Projection.html" title="trait rsrl::fa::projection::Projection">Projection</a>&lt;S&gt; for <a class="struct" href="../../rsrl/fa/struct.Linear.html" title="struct rsrl::fa::Linear">Linear</a>&lt;S, P&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsrl/fa/linear.rs.html#113-125' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.project' class="method"><span id='project.v' class='invisible'><code>fn <a href='../../rsrl/fa/projection/trait.Projection.html#tymethod.project' class='fnname'>project</a>(&amp;self, input: &amp;S::<a class="trait" href="../../rsrl/geometry/trait.Space.html" title="trait rsrl::geometry::Space">Repr</a>) -&gt; <a class="type" href="../../ndarray/aliases/type.Array1.html" title="type ndarray::aliases::Array1">Array1</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;</code></span></h4>
+<h4 id='method.dim' class="method"><span id='dim.v' class='invisible'><code>fn <a href='../../rsrl/fa/projection/trait.Projection.html#tymethod.dim' class='fnname'>dim</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></h4>
+<h4 id='method.equivalent' class="method"><span id='equivalent.v' class='invisible'><code>fn <a href='../../rsrl/fa/projection/trait.Projection.html#tymethod.equivalent' class='fnname'>equivalent</a>(&amp;self, other: &amp;Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rsrl";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
